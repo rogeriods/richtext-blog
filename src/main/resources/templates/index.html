@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>RDS | Blog</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+</head>
+
+<body>
+	<div class="container">
+		<h1>Post(s)</h1>
+		<p>Describe here your daily routine and create <b>vocabulary</b> area with new words.</p>
+		<hr />
+		<table id="dataTable" class="table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Title</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="post : ${posts}">
+					<td th:text="${post.id}">ID</td>
+					<td>
+						<a href="#" th:href="${'/post/edit/' + post.id}">
+							<i class="fas fa-pencil-alt"></i> <span th:text="${post.title}"></span>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr />
+		<a href="/post/new" class="btn btn-primary"><i class="fas fa-plus"></i> Add New Post</a>
+	</div>
+
+	<!-- Javascript -->
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			$('#dataTable').DataTable({
+				"order": [[0, "desc"]]
+			});
+		});
+	</script>
+</body>
+
+</html>
