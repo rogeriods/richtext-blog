@@ -43,10 +43,14 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+	<!--
+	 don't use "order": [[0, "desc"]] like this, because will generate a error on brownser
+	 always put spaces between brackets [ [0, "desc"] ]
+	 -->
 	<script>
 		$(document).ready(function () {
 			$('#dataTable').DataTable({
-				"order": [[0, "desc"]]
+				"order": [ [0, "desc"] ]
 			});
 		});
 	</script>

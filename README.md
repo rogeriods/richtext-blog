@@ -3,6 +3,15 @@ This is a simple project using Tiny Text Editor and MySQL.
 
 All the structure running in Docker with jdk11.
 
+## Screenshots
+Grid screen
+
+![Alt text](resources/screen01.png)
+
+Form screen
+
+![Alt text](resources/screen02.png)
+
 ## Getting Started
 Before build and run the image generate a jar file.
 
